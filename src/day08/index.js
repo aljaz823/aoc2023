@@ -26,15 +26,10 @@ const parseInput = (rawInput, part2 = false) => {
     return { instructions, destinations, currentPositions }
 }
 
-const part1 = (rawInput) => {
-    return getSteps(...Object.values(parseInput(rawInput)))[0]
-}
+const part1 = (rawInput) => getSteps(...Object.values(parseInput(rawInput)))[0]
 
-const part2 = (rawInput) => {
-    return getSteps(...Object.values(parseInput(rawInput, true)), true).reduce(
-        lcm
-    )
-}
+const part2 = (rawInput) =>
+    getSteps(...Object.values(parseInput(rawInput, true)), true).reduce(lcm)
 
 const getSteps = (instructions, destinations, currentPositions, part2) => {
     let steps = []
